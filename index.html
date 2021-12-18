@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: black solid 2px;
+            border-collapse: collapse;
+        }
+        .namelabel, #email{
+            color: purple;
+        }
+        *{
+            color: black;
+        }
+        #hello{
+            color: lightgreen;
+        }
+        .para{
+            color: blue;
+        }
+
+        #box{
+            margin : 15px 30px;
+            border : 2px dotted red;
+            padding : 15px 30px;
+        }
+        #helloworld {
+            color: blue;
+        }
+        .helloClass{
+            color: purple;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css"> </link>
+    <link rel="stylesheet" href="./style1.css"> </link>
+</head>
+
+<body id="body">
+    <p  > Hello World </p>
+
+    <span> This is HTML session </span> <span> Test Text</span>
+    <h1>Heading 1</h1>
+    <h2 id="box" >Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <a href="https://www.guvi.in/" target="_blank"> Guvi </a> <br /> <br />
+    <div>
+        This is div tag. HTML, in full hypertext markup language, a formatting system for displaying material retrieved
+        over the Internet. ... HTML markup tags specify document elements such as headings, paragraphs, and tables. They
+        mark up a document for display by a computer program known as a Web browser.
+    </div>
+    <div>
+        This is div tag. HTML, in full hypertext markup language, a formatting system for displaying material retrieved
+        over the Internet. ... HTML markup tags specify document elements such as headings, paragraphs, and tables. They
+        mark up a document for display by a computer program known as a Web browser.
+    </div>
+    <section>
+        <h3>HTML Introduction</h3>
+        <p>This is section tag. HTML, in full hypertext markup language, a formatting system for displaying material
+            retrieved over the Internet. ... HTML markup tags specify document elements such as headings, paragraphs,
+            and tables. They mark up a document for display by a computer program known as a Web browser.</p>
+    </section>
+    <article>
+        <p>This is article tag. HTML, in full hypertext markup language, a formatting system for displaying material
+            retrieved over the Internet. ... HTML markup tags specify document elements such as headings, paragraphs,
+            and tables. They mark up a document for display by a computer program known as a Web browser.</p>
+    </article>
+    <table>
+        <thead>
+            <tr>
+                <td> Name </td>
+                <td> Email </td>
+                <td colspan="2"> Address </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>XXX</td>
+                <td>xx@gmail.com</td>
+                <td>Chennai</td>
+                <td>Tamil Nadu</td>
+            </tr>
+            <tr>
+                <td>YYY</td>
+                <td>yy@gmail.com</td>
+                <td>Chennai</td>
+                <td>Tamil Nadu</td>
+            </tr>
+            <tr>
+                <td>ZZZ</td>
+                <td>zz@gmail.com</td>
+                <td>Hyderabad</td>
+                <td>Andra</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4"> This is user Table </td>
+            </tr>
+        </tfoot>
+    </table> <br /> <br />
+    <form >
+        <h3>Registration Form</h3>
+        <div>
+            <label for="name"  class="idLabel"> Name: </label>
+            <input type="text" name="name" id="name"/>
+        </div> <br/>
+        <div>
+            <label for="email" class="emailLabel"> Email: </label>
+            <input type="email" name="email" id="email" />
+        </div> <br/>
+        <div>
+            <label for="password" id="password"> Password: </label>
+            <input type="password" name="password" id="password" />
+        </div> <br/>
+        <div>
+            <label> Gender </label>
+            <input type="radio" name="gender" id="male" value="male"> Male
+            <input type="radio" name="gender" id="female" value="female"> Female
+            <input type="radio" name="gender" id="other" value="other"> Other
+        </div> <br/>
+        <div>
+            <label>Courses</label>
+            <input type="checkbox" name="React" id="React" value="ReactCourse"> React 
+            <input type="checkbox" name="Angular" id="Angular" value="AngularCourse"> Angular 
+            <input type="checkbox" name="Node" id="Node" value="NodeCourse"> Node 
+            <input type="checkbox" name="Python" id="Python" value="PythonCourse"> Python 
+        </div> <br/>
+        <button type="submit"> Submit </button>
+        <button type="button"> Reset </button>
+    </form> <br/>
+    
+
+</body>
+</html>

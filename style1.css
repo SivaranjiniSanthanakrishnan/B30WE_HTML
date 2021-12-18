@@ -1,0 +1,9 @@
+.emailLabel {
+    color: chocolate !important;
+}
+#password{
+    color: red;
+}
+.idLabel{
+    background-color: orange;
+}
