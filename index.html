@@ -38,21 +38,75 @@
         .helloClass{
             color: purple;
         }
+        .parent{
+            position: absolute;
+        }
+        .child1{
+            top: 30px;
+            left: 30px;
+            position: relative;
+        }
+        .child2{
+            top: 30px;
+            left: 30px;
+            position: relative;
+        }
+        #cmt{
+            position: fixed;
+            top: 200px;
+            left: 90px
+        }
+        #feed {
+            position: sticky;
+            top: 0px;
+        }
+        .font{
+            font-family: "Courier New", "Courier", "monospace";
+        }
+        .overflow{
+            height: 300px;
+            width: 300px;
+            margin: auto;
+            border: 2px solid black;
+            overflow: scroll;
+        }
+        @media screen and (max-width:500px){
+            .media{
+                color: red;
+            }
+        }
+        @media screen and (min-width:500px){
+            .media{
+                color: purple;
+            }
+        }
     </style>
     <link rel="stylesheet" href="style.css"> </link>
     <link rel="stylesheet" href="./style1.css"> </link>
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"></head>
 
-<body id="body">
-    <p  > Hello World </p>
-
+<body>
+    
+    <p> Hello World </p>
+    
+    <h3> CSS Position Properties</h3>
+    <div style="background-color: blue;" > This is Parent
+        <div class="child1" style="background-color: brown;"> This is Child 1 </div>
+        <div class="child2" style="background-color: brown;"> This is Child 2 </div>
+    </div> <br/> <br/> <br/>
+    <span id="cmt"> Comment </span>
+    <span id="feed"> Feedback </span> <br/>
+    
     <span> This is HTML session </span> <span> Test Text</span>
+
     <h1>Heading 1</h1>
-    <h2 id="box" >Heading 2</h2>
+    <h2>Heading 2</h2>
     <h3>Heading 3</h3>
     <h4>Heading 4</h4>
     <h5>Heading 5</h5>
     <h6>Heading 6</h6>
+
     <a href="https://www.guvi.in/" target="_blank"> Guvi </a> <br /> <br />
     <div>
         This is div tag. HTML, in full hypertext markup language, a formatting system for displaying material retrieved
@@ -138,8 +192,92 @@
         </div> <br/>
         <button type="submit"> Submit </button>
         <button type="button"> Reset </button>
-    </form> <br/>
-    
+    </form> <br/> <br/>
+    <h3>Font Family</h3>
+    <p class="font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem molestiae quam quos voluptatibus sint, ratione totam rem officia, fuga tempore non voluptatem iusto necessitatibus accusamus sit, ab tenetur dolor modi!</p>
 
+    <h3> Overflow Property</h3>
+    <div class="overflow">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae explicabo alias unde quam mollitia. Officiis, debitis distinctio aliquam, accusantium doloribus placeat repudiandae laboriosam inventore eius rem necessitatibus obcaecati adipisci beatae similique totam, 
+    </div> <br/> <br/>
+
+    <h3>Media Query</h3>
+    <div class="media">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit earum iusto reiciendis suscipit. Aperiam ut odio vel quod harum, possimus porro dolorem adipisci molestias nulla labore molestiae maxime iusto a ipsum quas explicabo animi facere eos perspiciatis atque. Tempora officia quae doloremque velit modi iusto dicta optio earum? Aperiam incidunt, porro magnam accusantium atque aspernatur. Minima, accusantium nisi est dolorum eligendi excepturi numquam! Numquam earum aliquid consequatur officia atque voluptatem nam sed doloremque pariatur! Neque exercitationem fugiat maxime ducimus pariatur harum dicta? Reprehenderit, dolorem ex dolor odit rem culpa? Perspiciatis optio, veniam non obcaecati commodi praesentium ut sit tempore ipsum.
+    </div> <br/> <br/>
+
+    <h3>Bootstrap</h3>
+    <input type="range" class="form-range" id="customRange1">
+    <button type="button" class="btn btn-link">Primary</button> <br/> <br/>
+
+    <h3>Containers in Bootstrap</h3>
+    <div class="container-fluid" style="background-color: rosybrown;">This is Medium container</div> <br/> <br/>
+
+    <h3>Columns in Bootstrap</h3>
+    <div class="container-sm">
+        <div class="row">
+            <div class="col-1 bg-primary">1 </div>
+            <div class="col-1 bg-secondary">2</div>
+            <div class="col-1 bg-success">3</div>
+            <div class="col-1 bg-danger">4</div>
+            <div class="col-1 bg-warning">5</div>
+            <div class="col-1 bg-info">6</div>
+            <div class="col-1 bg-light" >7</div>
+            <div class="col-1 bg-dark">8</div>
+            <div class="col-1 bg-body">9</div>
+            <div class="col-1 bg-primary">10</div>
+            <div class="col-1 bg-secondary">11</div>
+            <div class="col-1 bg-success">12</div>
+            <div class="col-1 bg-success">13</div>
+        </div>
+        <div class="row">
+            <div class="col-1 bg-success">14</div>
+        </div>
+    </div> <br/>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-xl-9">
+                <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+            <div class="col-md-6 col-xl-9">
+                <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+        </div>
+    </div> <br/>
+    <h3>Font Awesome </h3>
+    <i class="fas fa-child fa-8x"></i>
+
+
+    <br/> <br/> <br/>
 </body>
 </html>
