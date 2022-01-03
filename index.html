@@ -80,6 +80,21 @@
                 color: purple;
             }
         }
+        .flexparent{
+            background-color: maroon;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            flex-flow: wrap row;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+        .child{
+            background-color: white;
+            margin: 10px;
+            padding: 10px;
+        }
     </style>
     <link rel="stylesheet" href="style.css"> </link>
     <link rel="stylesheet" href="./style1.css"> </link>
@@ -274,10 +289,16 @@
             </div>
         </div>
     </div> <br/>
+
     <h3>Font Awesome </h3>
-    <i class="fas fa-child fa-8x"></i>
+    <i class="fas fa-child fa-8x"></i> <br/>
 
-
+    <div class="flexparent">
+        <div class="child"> Child 1</div>
+        <div class="child"> Child 2 </div>
+        <div class="child"> Child 3 </div>
+        <div class="child"> Child 4 </div>
+    </div>
     <br/> <br/> <br/>
 </body>
 </html>
