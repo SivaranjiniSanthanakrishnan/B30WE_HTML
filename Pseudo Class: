@@ -1,0 +1,45 @@
+Pseudo Class:
+    Pseudo class start with : after selector
+    Based on the event given in pseudo class it will execute it's css properties
+
+Nth-Child(odd/even)
+    Applys CSS properties to odd/even rows in the elements
+Nth-Child(2)
+    Apply CSS properties to the mentioned number of tag elements
+p:first-Child
+    Apply CSS properties for the first child of p tag for all the parents 
+p:last-child
+    Apply CSS properties for the last child of p tag from the main parent only 
+
+Side Menu:
+
+
+DOM:
+createElement
+setAttribute
+getElementById
+innerHTML vs innerText
+appendChild vs append 
+
+DOM: Document Object Manipulation
+    => Gives the structural representation of HTML elements 
+    => Used to create a dynamic elements
+    => Access like a tree like structure 
+
+Console:
+document => HTML content of current page
+document.all => Gives all contained HTML collections
+document.URL => Gives the current page URL 
+
+Javascript DOM Selector 
+1. Id Selector => document.getElementById("element-id");
+2. Class Selector => document.getElementsByClassName("element-class");
+3. Tag Selector => document.getElementByTagName("tag-name");
+
+innerHTML vs innerText 
+innerHTML : Able to access the particular element along with HTML content 
+innerText : Able to access only the text of the particular element 
+
+append vs appendChild 
+appendChild: Will append only one element 
+append : Will append multiple element along with comma separated. 

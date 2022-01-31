@@ -149,87 +149,214 @@
 // numberMatch.then(data => console.log(data)).catch(err => console.log(err));
 
 
-// Promise chain : Example 4
+// // Promise chain : Example 4
 
-var promiseChain = new Promise((resolve, reject) => {
-    (1==2) ? resolve(10) : reject("Not true")
+// var promiseChain = new Promise((resolve, reject) => {
+//     (1==2) ? resolve(10) : reject("Not true")
+// })
+
+// promiseChain
+//     .then(data => {
+//         console.log(data)
+//         return data
+//     })
+//     .then(data => {
+//         console.log(data)
+//         return 5
+//     })
+//     .then(data => {
+//         console.log(data)
+//         return data
+//     })
+//     .then(data => {
+//         console.log(data)
+//         return data
+//     })
+//     .catch(err => {
+//         console.error(err)
+//         return "Data from catch"
+//     })
+//     .then(data => {
+//         console.log(data)
+//         return data
+//     })
+//     .finally(() => {
+//         console.log("Finally block")
+//     })
+    
+// // Task : Promise Chain
+
+// // 1. Write Promise function to get user data from database 
+// // 2. Write Promise function to get services for the user
+// // 3. Write Promise function to get cost for the given list of services 
+// // 4. Call each function in a Promise chaining method using .then() function
+
+// function getUser(userId) {
+//     return new Promise((resolve, reject) => {
+//         console.log("Fetching the data from database")
+//         setTimeout(() => {
+//             resolve({userId: userId, username: "XXX"})
+//         }, 1000)
+//     })
+// }
+// function getServicesForUser(user) {
+//     console.log("Getting service data for the user")
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(["email", "VPN", "AWS", " Cloud access"])
+//         }, 1000)
+//     })
+// }
+// function getCostForServices(services) {
+//     console.log("Calculating cost for services")
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             let cost = services.reduce((accumulator, initialValue) => {
+//                 return accumulator + 100
+//             }, 0)
+//             resolve(cost)
+//         })
+//     })
+// }
+
+// getUser(2)
+//     .then(userData => {
+//         console.log(userData)
+//         return getServicesForUser(userData)
+//     })
+//     .then(serviceData => {
+//         console.log(serviceData)
+//         return getCostForServices(serviceData)
+//     })
+//     .then(finalCost => {
+//         console.log(finalCost)
+//     })
+
+// // getUser(5).then(getServicesForUser).then(getCostForServices).then(data => console.log(data))
+
+// Promise.all([])
+
+const promise1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log("First Promise Function")
+        resolve(10)
+    }, 1000)
+})
+const promise2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log("Second Promise Function")
+        if(2==1) {
+            resolve(20)
+        } else {
+            reject("Second promise rejected")
+        }
+    }, 1000)
+})
+const promise3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log("Third Promise Function")
+        resolve(30)
+    }, 1000)
 })
 
-promiseChain
-    .then(data => {
-        console.log(data)
-        return data
+Promise.all([promise1, promise2, promise3 ])
+    .then((result) => {
+        console.log(result)
+        var output = result.reduce((accumulator, initialValue) => accumulator + initialValue, 0)
+        console.log(output);
     })
-    .then(data => {
-        console.log(data)
-        return 5
-    })
-    .then(data => {
-        console.log(data)
-        return data
-    })
-    .then(data => {
-        console.log(data)
-        return data
-    })
-    .catch(err => {
-        console.error(err)
-        return "Data from catch"
-    })
-    .then(data => {
-        console.log(data)
-        return data
-    })
-    .finally(() => {
-        console.log("Finally block")
-    })
-    
-// Task : Promise Chain
+    .catch(err => console.error(err))
 
-// 1. Write Promise function to get user data from database 
-// 2. Write Promise function to get services for the user
-// 3. Write Promise function to get cost for the given list of services 
-// 4. Call each function in a Promise chaining method using .then() function
-
-function getUser(userId) {
-    return new Promise((resolve, reject) => {
-        console.log("Fetching the data from database")
-        setTimeout(() => {
-            resolve({userId: userId, username: "XXX"})
-        }, 1000)
-    })
-}
-function getServicesForUser(user) {
-    console.log("Getting service data for the user")
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(["email", "VPN", "AWS", " Cloud access"])
-        }, 1000)
-    })
-}
-function getCostForServices(services) {
-    console.log("Calculating cost for services")
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            let cost = services.reduce((accumulator, initialValue) => {
-                return accumulator + 100
-            }, 0)
-            resolve(cost)
+document.getElementById("text").addEventListener("click", getText)
+function getText(){
+    fetch("/demo/demo.txt")
+        .then(res => {
+            console.log(res)
+            return res.text()
         })
-    })
+        .then(data => {
+            console.log(data)
+            document.querySelector("#output").innerHTML = data 
+        })
+        .catch(err => console.error(err))
 }
 
-getUser(2)
-    .then(userData => {
-        console.log(userData)
-        return getServicesForUser(userData)
-    })
-    .then(serviceData => {
-        console.log(serviceData)
-        return getCostForServices(serviceData)
-    })
-    .then(finalCost => {
-        console.log(finalCost)
-    })
+document.getElementById("json").addEventListener("click", getJson)
+function getJson() {
+    fetch("userData.json")
+        .then(res => res.json())
+        .then(data => {
+            var ul = document.getElementById("ul-list")
+            data.forEach(item => {
+                let li = document.createElement("li")
+                li.innerText = `${item.name}, ${item.age}`
+                ul.append(li);
+            })
+        })
+        .catch(err => console.error(err))
+}
 
-// getUser(5).then(getServicesForUser).then(getCostForServices).then(data => console.log(data))
+document.getElementById("extapi").addEventListener("click", getExtAPI)
+function getExtAPI(){
+    fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            var ul = document.getElementById("ul-list")
+            data.forEach(item => {
+                let li = document.createElement("li")
+                li.innerText = `${item.name}, ${item.email}`
+                ul.append(li);
+            })
+        })
+}
+
+document.getElementById("updateAPI").addEventListener("click", updateAPI)
+function updateAPI(){
+    const body = {
+        name : "XXX",
+	    email : "xx@gmail.com"
+    }
+    const requestOptions = {
+        method: "PUT",
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify(body)
+    }
+    fetch("https://jsonplaceholder.typicode.com/users/2", requestOptions)
+        .then(res => {
+            console.log(res)
+            var output = res.json()
+            console.log(output)
+            return output
+        })
+        .then(data=> {
+            console.log(data)
+        })
+}
+
+document.getElementById("postAPI").addEventListener("click", postAPI)
+function postAPI(){
+    const body = {
+        name : "XXX",
+	    email : "xx@gmail.com"
+    }
+    var requestOptions={
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(body)
+    }
+    fetch("https://jsonplaceholder.typicode.com/users", requestOptions)
+        .then(res => res.json())
+        .then(data => console.log(data))
+}
+
+document.getElementById("deleteAPI").addEventListener("click", deleteAPI)
+function deleteAPI() {
+    var requestOptions = {
+        method: 'DELETE'
+    }
+    fetch("https://jsonplaceholder.typicode.com/users", requestOptions)
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err))
+}

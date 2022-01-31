@@ -11,6 +11,9 @@
         body{
             margin: 2%;
         }
+        #selected-value{
+            color: blueviolet;
+        }
     </style>
 </head>
 <body>
@@ -42,7 +45,7 @@
             <label>Second Value</label>
             <input type="text" class="form-control" id="second" />
         </div> <br/>
-        <button type="button" class="btn btn-primary" onclick="add()">Add</button>
+        <button type="button" class="btn btn-primary" onclick="add(this)">Add</button>
         <button type="button" class="btn btn-danger" onclick="sub()">Sub</button>
         <button type="button" class="btn btn-warning" onclick="mul()">Mul</button>
         <button type="button" class="btn btn-success" onclick="div()">Div</button>
@@ -77,7 +80,44 @@
         </ul> <br/>
     </div>
     <br/>
+    <div>
+        <h5>Query Selector</h5>
+        <form>
+            <select id="select-course" >
+                <option>Select any course</option>
+                <option>React</option>
+                <option>Node</option>
+                <option>Mongo</option>
+            </select> <br/> <br/>
+            Selected value is : <span id="selected-value"></span>
+        </form> <br/>
+    </div>
+    <div>
+        <form>
+            <input type="text" id="user-name" placeholder="Enter Name"/> <br/> <br/>
+            Entered Name is : <span id="typed-name"></span>
+        </form> 
+    </div> <br/> 
+    <div>
+        <form>
+            <label>Enter description:</label> <br/>
+            <textarea id="description" maxlength="25"></textarea> <br/> <br/>
+            Characters Left : <span id="character-count">25</span>
+        </form>
+    </div> <br/> <br/>
+    <div>
+        <ul id="un-list" class="user">
+            <li class="user">User 1</li>
+            <li class="user">User 2</li>
+            <li class="user">User 3</li>
+        </ul>
+        <ul>
+            <li class="user">React</li>
+            <li>Node</li>
+            <li>Mongo</li>
+        </ul>
+    </div>
     
-</body>
+</body> 
 <script src="dom.js"></script>
 </html>

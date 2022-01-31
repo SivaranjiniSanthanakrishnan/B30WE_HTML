@@ -38,7 +38,8 @@ function addrow(){
     td2.innerText = "28"
 }
 
-function add(){
+function add(e){
+    console.log(e)
     let num1 = document.getElementById("first").value;
     let num2 = document.getElementById("second").value;
     let out = parseInt(num1) + parseInt(num2);
@@ -96,3 +97,68 @@ document.getElementById("appendData").innerText += firstElement+lastElement;
 
 // += : append Operator
 // append()
+
+// Task 1
+var selectBox = document.querySelector("#select-course");
+var spanTag = document.querySelector("#selected-value");
+
+selectBox.addEventListener("change", function(){
+    spanTag.innerText = selectBox.value;
+})
+
+// Task 2
+var textBox = document.querySelector("#user-name");
+console.log(textBox)
+textBox.addEventListener("keydown", function() {
+    let spanTag = document.querySelector("#typed-name");
+    spanTag.innerText = textBox.value;
+})
+
+var textArea = document.querySelector("#description");
+textAreaCount = textArea.getAttribute("maxlength");
+
+textArea.addEventListener("keyup", function(event){
+    console.log(event)
+    let spanTag = document.querySelector("#character-count");
+    spanTag.innerText = textAreaCount - textArea.value.length;
+});
+
+var tags = document.querySelectorAll(".user")[1];
+console.log(tags);
+
+// setTimeout
+
+// Way 1
+setTimeout(() => {
+    console.log("Execute after 3 seconds")
+}, 3000);
+
+// Way 2
+const timeout = () => console.log("Execute after 5 seconds");
+var setTimer = setTimeout(timeout, 5000);
+
+// clearTimeout
+setTimeout(() => {
+    clearTimeout(setTimer)
+},3000);
+
+// setInterval
+var i=0;
+var fruits = ["apple", "mango", "orange", "pineapple", "kiwi"];
+
+function displayFruits(){
+    console.log("came")
+    if(i<fruits.length) {
+        console.log(fruits[i]);
+        i++;
+    }
+}
+
+var setInterval = setInterval(displayFruits, 3000);
+var clearIntervalTime = fruits.length * 3000 + 1000;
+
+// clearInterval
+setTimeout(() => {
+    clearInterval(setInterval)
+}, clearIntervalTime);
+
